@@ -31,9 +31,7 @@ public class LoginStepDef extends BaseStepDef {
 
     @Given("^login to \"([^\"]*)\" with username \"([^\"]*)\" and password \"([^\"]*)\"$")
     public void loginToWithUsernameAndPassword(String url, String userName, String password) throws Throwable {
-       okta_is_on.loginPage().openURL(url);
-       okta_is_on.loginPage().loginToPortal(userName,password);
-       okta_is_on.loginPage().landingToDashboardPage();
+       okta_is_on.loginPage().openURL(url).loginToPortal(userName,password).landingToDashboardPage();
     }
 
 

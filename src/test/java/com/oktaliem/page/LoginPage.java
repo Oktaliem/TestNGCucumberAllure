@@ -31,28 +31,33 @@ public class LoginPage extends BasePage {
 
 
     @Step
-    public void loginToPortal(String username, String password) {
+    public LoginPage loginToPortal(String username, String password) {
         inputTextBox(this.userName,username);
         inputTextByJSExecutor(this.password,password);
         clickOn(loginBtn);
         saveScreenshotPNG(driver);
+        return this;
     }
 
 
     @Step
-    public void openURL(String url) {
+    public LoginPage openURL(String url) {
         driver.get(url);
         saveScreenshotPNG(driver);
+        return this;
     }
 
     @Step
-    public void landingToDashboardPage() {
+    public LoginPage landingToDashboardPage() {
         checkIfTextIsExpected(By.tagName("h1"),"Dashboard");
         saveScreenshotPNG(driver);
+        return this;
     }
 
     @Step
-    public void verifyErrorMessageDisplayed(String errorMessage) {
+    public LoginPage verifyErrorMessageDisplayed(String errorMessage) {
         checkIfTextIsExpected(By.className("alert-danger"),errorMessage);
+        saveScreenshotPNG(driver);
+        return this;
     }
 }
