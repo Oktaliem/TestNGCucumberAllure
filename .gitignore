@@ -1,0 +1,5 @@
+/.idea
+/target
+TestNGCucumberAllure.iml
+/allure-results
+Log4j
