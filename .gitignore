@@ -1,5 +1,5 @@
 /.idea
 /target
-TestNGCucumberAllure.iml
+CucumberTestNGAllure.iml
 /allure-results
 Log4j

@@ -8,6 +8,6 @@ Feature: Manage Items
     Given login to "http://localhost:10080/auth/login" with username "admin@example.com" and password "password"
 
   @TC_02 @SmokeTest
-  Scenario: And new items
+  Scenario: TC-02 And new items
     When I fill out the form
     Then I am able to create new item

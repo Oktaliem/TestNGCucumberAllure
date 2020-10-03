@@ -32,6 +32,7 @@ public class LoginPage extends BasePage {
 
     @Step
     public LoginPage loginToPortal(String username, String password) {
+        Log.info("STEP - login to Portal");
         inputTextBox(this.userName,username);
         inputTextByJSExecutor(this.password,password);
         clickOn(loginBtn);
@@ -42,22 +43,23 @@ public class LoginPage extends BasePage {
 
     @Step
     public LoginPage openURL(String url) {
+        Log.info("STEP - open URL");
         driver.get(url);
         saveScreenshotPNG(driver);
         return this;
     }
 
     @Step
-    public LoginPage landingToDashboardPage() {
-        checkIfTextIsExpected(By.tagName("h1"),"Dashboard");
+    public void landingToDashboardPage() {
+        Log.info("STEP - Landing to dashboard page");
+        checkIfTextIsExpected(By.tagName("h1"),"Wizard");
         saveScreenshotPNG(driver);
-        return this;
     }
 
     @Step
-    public LoginPage verifyErrorMessageDisplayed(String errorMessage) {
+    public void verifyErrorMessageDisplayed(String errorMessage) {
+        Log.info("STEP - Verify Error Message Displayed");
         checkIfTextIsExpected(By.className("alert-danger"),errorMessage);
         saveScreenshotPNG(driver);
-        return this;
     }
 }

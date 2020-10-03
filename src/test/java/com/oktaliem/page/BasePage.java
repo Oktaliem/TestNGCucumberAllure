@@ -2,6 +2,7 @@ package com.oktaliem.page;
 
 import com.github.javafaker.Faker;
 import com.oktaliem.page.webactions.BaseActions;
+import com.oktaliem.page.webactions.Log;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
@@ -26,6 +27,7 @@ public class BasePage extends BaseActions {
         WebElement el = driver.findElement(By.xpath(element));
         fluentWait(el, 60000, 500);
         clickOn(el);
+        Log.info("open Side Bar Menu");
     }
 
     @Attachment(value = "Page screenshot", type = "image/png")
